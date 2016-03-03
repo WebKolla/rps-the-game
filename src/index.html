@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]>         <html class="no-js lt-ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
+<link type="text/css" href="css/styles.css" rel="stylesheet" media="all" />
+<!--[if (gte IE 6)&(lte IE 8)]>
+<link type="text/css" href="css/ie.css" rel="stylesheet" media="all" />
+<![endif]-->
 <body>
 
 </body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script>
+    var path = "http://browser-update.org/update-browser.html",
+            target = "_blank",
+            link = "<a href="+ path +" target="+ target +">upgrading to the latest version" + "</a>",
+            $buoop = {
+                vs: {i: 9, f: 36, o: 26, s: 5, c: 40},
+                reminder: 0,
+                text: "It looks like you're using an old version of this browser so our pages may not work as intended.  We recommend " + link + "."
+            };
+    function $buo_f(){
+        var e = document.createElement("script");
+        e.src = "//browser-update.org/update.min.js";
+        if(!document.getElementById("assumptionsHeaderFooter")) {
+            document.body.appendChild(e);
+        }
+
+    };
+    try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+    catch(e){window.attachEvent("onload", $buo_f)}
+</script>
 </html>

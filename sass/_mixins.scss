@@ -1,0 +1,73 @@
+// ----- Media-queries ----- //
+$breakpoints: S $l-breakpoint-S, M $l-breakpoint-M, L $l-breakpoint-L;
+
+@mixin bp($bp) {
+  // If compile-IE is true (IE8 <=) then just use the desktop overrides and parse them without @media queries
+  @if $compile-IE {
+    @content;
+  }
+    // If compile-IE is false (modern browsers) then parse the @media queries
+  @else {
+    @each $breakpoint in $breakpoints {
+      @if $bp == nth($breakpoint, 1) {
+        @media (min-width: nth($breakpoint, 2)) {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+// ----- IE overrides ----- //
+// Mixin when a override is needed for IE. Possible arguments are IE8 and IE9
+@mixin IE-fallback($IE-version) {
+  @if ($compile-IE == false) and ($IE-version == IE9) {
+    .#{$IE9} & {
+      @content;
+    }
+  }
+  @else {
+    @if ($compile-IE) and ($IE-version == IE8) {
+      .#{$IE8} & {
+        @content;
+      }
+    }
+  }
+}
+
+// ----- Max width ----- //
+@mixin max-width($width) {
+  @if $compile-IE{
+    width: u($width);
+  }
+  @else {
+    width: 100%;
+    @include bp(L){
+      max-width: u($width);
+    }
+  }
+}
+
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+@function u($values) {
+  $list: ();
+  @each $value in $values {
+    $unit : unit($value);
+    $val  : parseInt($value);
+    @if ($compile-IE) and ($unit == 'rem') {
+      $list: append($list, ($val * 10) + px);
+    }
+    @else if ($compile-IE) and ($unit == 'px') or ($unit == 'rem') {
+      $list: append($list, $value);
+    }
+    @else if ($unit == 'px') {
+      $list: append($list, ($val / 10) + rem);
+    }
+    @else {
+      @warn 'There is no unit conversion for #{$unit}';
+    }
+  }
+  @return $list;
+}
