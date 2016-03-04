@@ -4,16 +4,28 @@
 <!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title></title>
 </head>
 <link type="text/css" href="css/styles.css" rel="stylesheet" media="all" />
+<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 <!--[if (gte IE 6)&(lte IE 8)]>
 <link type="text/css" href="css/ie.css" rel="stylesheet" media="all" />
 <![endif]-->
 <body>
-
+    <div class="l-wrapper">
+        <div id="container" class="l-main-container">
+            <p class="c-bigger-text">
+                Hello All, Let's play a game called Rocks, papers and scissors!
+            </p>
+            <button id="playnow"> Let's play </button>
+        </div>
+    </div>
 </body>
 <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script src="js/GameEngine.js"></script>
+<script src="js/Actions.js"></script>
+
 <script>
     var path = "http://browser-update.org/update-browser.html",
             target = "_blank",

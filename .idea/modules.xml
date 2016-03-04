@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/rps-ebay.iml" filepath="$PROJECT_DIR$/rps-ebay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rps-the-game.iml" filepath="$PROJECT_DIR$/.idea/rps-the-game.iml" />
     </modules>
   </component>
 </project>

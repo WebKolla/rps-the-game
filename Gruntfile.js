@@ -4,6 +4,7 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks("grunt-contrib-sass");
     grunt.loadNpmTasks('grunt-postcss');
 
+
     grunt.initConfig({
         cssmin: {
             options: {
@@ -20,7 +21,7 @@ module.exports = function( grunt ) {
         watch: {
             sass: {
                 files: ['sass/**/*.scss', 'src/js/**/*.js'],
-                tasks: ['sass', 'autoprefixer', 'cssmin']
+                tasks: ['sass', 'cssmin']
             }
         },
         sass: {
@@ -30,24 +31,11 @@ module.exports = function( grunt ) {
                     'src/css/ie.css': 'sass/**/ie.scss'
                 }
             }
-        },
-        postcss: {
-            options: {
-                map: true,
-                processors: [
-                    require('autoprefixer-core')({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Firefox >= 28', 'Android >= 2.3']})
-                ]
-            },
-            multiple_files: [{
-                expand: true,
-                flatten: true,
-                src: 'src/css/*.css', // -> src/css/file1.css, src/css/file2.css
-                dest: 'dist/css/' // -> dest/css/file1.css, dest/css/file2.css
-            }]
         }
+
     });
 
-    grunt.registerTask("dist", ["sass", "postcss", "cssmin"]);
+    grunt.registerTask("dist", ["sass", "cssmin"]);
     grunt.registerTask("default", ["dist"]);
 
 };

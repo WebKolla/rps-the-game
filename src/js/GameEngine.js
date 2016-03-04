@@ -2,15 +2,33 @@
  * Created by lv27693 on 03/03/2016.
  */
 
+var userInput = "";
+var rockButton = document.getElementById("rock");
+var paperButton = document.getElementById("paper");
+var scissorsButton = document.getElementById("scissors");
+
+var cpuResult = document.getElementById("cpuResult"),
+    msgHeading = document.getElementById("msgHeading"),
+    randomize = Math.random() * 100,
+    cpuChoice;
+
+window.onload = init;
 
 
-document.getElementById('goBtn').onclick = function runTheMagic() {
-    var userInput = document.getElementById('userInput').value,
-        cpuResult = document.getElementById('cpuResult'),
-        msgHeading = document.getElementById('msgHeading'),
-        randomize = Math.random() * 100,
-        cpuChoice;
+function init(){
+    rockButton.addEventListener("click", selectInput("Rock"), false);
+    paperButton.addEventListener("click", selectInput("Paper"), false);
+    scissorsButton.addEventListener("click", selectInput("Scissors"), false);
+}
 
+
+function selectInput(input){
+    userInput = input;
+    generateResults()
+}
+
+
+function generateResults(){
     if (userInput === "Rock" || userInput === "Paper" || userInput === "Scissors") {
         if (randomize > 0 && randomize < 33) {
             cpuChoice = "Rock";
@@ -49,6 +67,6 @@ document.getElementById('goBtn').onclick = function runTheMagic() {
     } else {
         msgHeading.style.color = "red";
         msgHeading.innerHTML = "Please enter Rock, Paper or Scissors";
-        return false;
+        //return false;
     }
-};
+}

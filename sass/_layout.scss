@@ -1,0 +1,20 @@
+.l-wrapper{
+  margin: 0 auto;
+}
+
+
+.l-main-container{
+  background: url("../images/rps-small.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: u(480px);
+  height: u(300px);
+  display: inline-block;
+  box-sizing: border-box;
+  padding: u(10px);
+
+  @include bp(M) {
+    background: url("../images/rps.jpg") no-repeat;
+    width: u(620px);
+    height: u(387px);
+  }
+}
