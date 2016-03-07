@@ -1,16 +1,27 @@
 .l-wrapper{
   margin: 0 auto;
+  width: 100%;
+  @include bp(L){
+    width: 600px;
+  }
 }
 
-
 .l-main-container{
-  background: url("../images/rps-small.jpg") no-repeat;
   background-size: 100% 100%;
+  max-width: 100%;
   width: u(480px);
   height: u(300px);
   display: inline-block;
   box-sizing: border-box;
   padding: u(10px);
+
+  &.l-game{
+    background: url("../images/rps-small.jpg") no-repeat;
+  }
+
+  &.l-intro{
+    background: url("../images/intro.png") no-repeat;
+  }
 
   @include bp(M) {
     background: url("../images/rps.jpg") no-repeat;
