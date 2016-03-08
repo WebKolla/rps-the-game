@@ -1,23 +1,27 @@
-var userInput = "";
-var rockButton = document.getElementById("Rock");
-var paperButton = document.getElementById("Paper");
-var scissorsButton = document.getElementById("Scissors");
-
+var isComputer = getQueryStringValue("isComp");
 var cpuResult = document.getElementById("cpuResult"),
     msgHeading = document.getElementById("msgHeading"),
-    randomize = Math.random() * 100,
-    cpuChoice;
+    randomize = Math.random() * 100;
 var choices = ["Rock", "Paper", "Scissors"];
+var cpuChoice;
 
-init();
-
-function init(){
-    rockButton.addEventListener("click", selectInput, false);
-    paperButton.addEventListener("click", selectInput, false);
-    scissorsButton.addEventListener("click", selectInput, false);
+if(isComputer){
+  btnVisibility();
+}else{
+  var userInput = "";
+  var rockButton = document.getElementById("Rock");
+  var paperButton = document.getElementById("Paper");
+  var scissorsButton = document.getElementById("Scissors");
+  rockButton.addEventListener("click", selectInput, false);
+  paperButton.addEventListener("click", selectInput, false);
+  scissorsButton.addEventListener("click", selectInput, false);
 }
 
+function btnVisibility(){
+   document.getElementById("btnContainer").style.display = "none";
+   generateResults(null, isComputer);
+}
 
-function selectInput(el){
-    generateResults(this.id, false)
+function selectInput(){
+  generateResults(this.id, isComputer);
 }

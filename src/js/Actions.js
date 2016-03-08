@@ -2,11 +2,17 @@
 init();
 
 function init(){
-    var playButton = document.getElementById("playnow");
-    playButton.addEventListener("click", loadGameView, false);
+    var playBtn = document.getElementById("plyvComp");
+    playBtn.addEventListener("click", loadGameView, false);
+    var compPlayBtn = document.getElementById('compvComp');
+    compPlayBtn.addEventListener("click", loadComputerGame, false);
 }
 
 
 function loadGameView(){
     window.location.replace("game.html");
+}
+
+function loadComputerGame(){
+    window.location.replace("game.html?isComp=true");
 }

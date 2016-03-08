@@ -1,11 +1,12 @@
 
 function generateResults(id, isComputer){
 
-    if(!!isComputer){
-      userInput = id;
-    }else{
+    if(isComputer){
       userInput = choices[Math.floor(Math.random() * choices.length)];
+    }else{
+      userInput = id;
     }
+
 
     if (userInput === "Rock" || userInput === "Paper" || userInput === "Scissors") {
         if (randomize > 0 && randomize < 33) {

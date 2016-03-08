@@ -16,11 +16,14 @@
   padding: u(10px);
 
   &.l-game{
-    background: url("../images/rps-small.jpg") no-repeat;
+    background: url("../images/rps-game.png") no-repeat;
   }
 
   &.l-intro{
     background: url("../images/intro.png") no-repeat;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 20%;
   }
 
   @include bp(M) {
@@ -28,4 +31,8 @@
     width: u(620px);
     height: u(387px);
   }
+}
+
+.l-intro-btn-container{
+  margin-top: u(20px);
 }

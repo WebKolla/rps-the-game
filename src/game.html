@@ -15,23 +15,29 @@
 <body>
 <div class="l-wrapper">
     <div id="container" class="l-main-container l-game">
+      <div id="btnContainer" class="l-btn-container js-visibility-toggle">
+        <p>
+          Pick your choice and wait for computer to decide!
+        </p>
         <button id="Rock">
-            Rock
+          Rock
         </button>
         <button id="Paper">
-            Paper
+          Paper
         </button>
         <button id="Scissors">
-            Scissors
+          Scissors
         </button>
-        <div id="msgHeading"></div>
-        <div id="cpuResult"></div>
+      </div>
+      <div id="msgHeading"></div>
+      <div id="cpuResult"></div>
     </div>
 </div>
 </body>
 <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script src="js/Executor.js"></script>
+<script src="js/Helpers.js"></script>
 <script src="js/GameEngine.js"></script>
+<script src="js/Executor.js"></script>
 
 <script>
     var path = "http://browser-update.org/update-browser.html",
