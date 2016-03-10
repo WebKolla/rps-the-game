@@ -1,7 +1,6 @@
 var isComputer = getQueryStringValue("isComp");
-var cpuResult = document.getElementById("cpuResult"),
-    msgHeading = document.getElementById("msgHeading"),
-    randomize = Math.random() * 100;
+var cpuResult = document.getElementById("cpuResult");
+var msgHeading = document.getElementById("msgHeading");
 var choices = ["Rock", "Paper", "Scissors"];
 var cpuChoice;
 
