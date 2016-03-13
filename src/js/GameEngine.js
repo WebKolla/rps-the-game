@@ -1,54 +1,48 @@
 
 function generateResults(id, isComputer){
-
+    var player = "You";
     if(isComputer){
-      userInput = choices[Math.floor(Math.random() * choices.length)];
+      uInput = choices[Math.floor(Math.random() * choices.length)];
+      player = "Player 1";
     }else{
-      userInput = id;
+      uInput = id;
     }
-    cpuResult.innerHTML = "";
-    msgHeading.innerHTML = "";
 
-      if (userInput === "Rock" || userInput === "Paper" || userInput === "Scissors") {
-                var randomize = Math.random() * 100;
-                if (randomize > 0 && randomize < 33) {
-                    cpuChoice = "Rock";
-                } else if(randomize >=34 && randomize < 66) {
-                    cpuChoice = "Paper";
-                } else {
-                    cpuChoice = "Scissors";
-                }
+    resultContainer.innerHTML = "";
+    msgContainer.innerHTML = "";
 
-
-                cpuResult.innerHTML = "Computer chose " + cpuChoice + " ";
-
-                if (userInput === cpuChoice) {
-                    msgHeading.innerHTML = "It's a Tie. Try Again!";
-                }
-
-                if (userInput === "Rock" && cpuChoice === "Paper") {
-                    msgHeading.innerHTML = "Paper covers Rock. You Loose!";
-                } else if (userInput === "Rock" && cpuChoice === "Scissors") {
-                    msgHeading.innerHTML = "Rock crushes scissors. You Win!";
-                    msgHeading.style.color = "green";
-                }
-
-                if (userInput === "Paper" && cpuChoice === "Rock") {
-                    msgHeading.innerHTML = "Paper covers Rock. You Win!";
-                    msgHeading.style.color = "green";
-                } else if (userInput === "Paper" && cpuChoice === "Scissors") {
-                    msgHeading.innerHTML = "Scissors cut Paper. You Loose!";
-                }
-
-                if (userInput === "Scissors" && cpuChoice === "Rock") {
-                    msgHeading.innerHTML = "Rock crushes Scissors. You Loose!";
-                } else if (userInput === "Scissors" && cpuChoice === "Paper") {
-                    msgHeading.innerHTML = "Scissors cut Paper. You Win!";
-                    msgHeading.style.color = "green";
-                }
+      if (uInput === "Rock" || uInput === "Paper" || uInput === "Scissors") {
+            var randomize = Math.random() * 100;
+            if (randomize > 0 && randomize < 33) {
+                autoChoice = "Rock";
+            } else if(randomize >=34 && randomize < 66) {
+                autoChoice = "Paper";
             } else {
-                msgHeading.style.color = "red";
-                msgHeading.innerHTML = "Please enter Rock, Paper or Scissors";
+                autoChoice = "Scissors";
             }
 
+            resultContainer.innerHTML = "Computer chose " + autoChoice + " ";
+
+            if (uInput === autoChoice) {
+                msgContainer.innerHTML = "It's a Tie. Try Again!";
+            }
+
+            if (uInput === "Rock" && autoChoice === "Paper") {
+                msgContainer.innerHTML = "Paper covers Rock. "+ player +" Loose!";
+            } else if (uInput === "Rock" && autoChoice === "Scissors") {
+                msgContainer.innerHTML = "Rock crushes scissors. "+ player +" Win!";
+            }
+
+            if (uInput === "Paper" && autoChoice === "Rock") {
+                msgContainer.innerHTML = "Paper covers Rock. "+player+" Win!";
+            } else if (uInput === "Paper" && autoChoice === "Scissors") {
+                msgContainer.innerHTML = "Scissors cut Paper. "+player+" Loose!";
+            }
+
+            if (uInput === "Scissors" && autoChoice === "Rock") {
+                msgContainer.innerHTML = "Rock crushes Scissors. "+player+" Loose!";
+            } else if (uInput === "Scissors" && autoChoice === "Paper") {
+                msgContainer.innerHTML = "Scissors cut Paper. "+player+" Win!";
+            }
+      }
 }

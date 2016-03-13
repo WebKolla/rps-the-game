@@ -1,13 +1,13 @@
 var isComputer = getQueryStringValue("isComp");
-var cpuResult = document.getElementById("cpuResult");
-var msgHeading = document.getElementById("msgHeading");
+var resultContainer = document.getElementById("resultContainer");
+var msgContainer = document.getElementById("msgContainer");
 var choices = ["Rock", "Paper", "Scissors"];
-var cpuChoice;
+var autoChoice;
 
 if(isComputer){
   btnVisibility();
 }else{
-  var userInput = "";
+  var uInput = "";
   var rockButton = document.getElementById("Rock");
   var paperButton = document.getElementById("Paper");
   var scissorsButton = document.getElementById("Scissors");
