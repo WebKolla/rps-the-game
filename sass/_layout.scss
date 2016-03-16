@@ -2,7 +2,33 @@
   margin: 0 auto;
   width: 100%;
   @include bp(L){
-    width: 600px;
+    width: u(600px);
+  }
+}
+
+.l-header{
+  width: 100%;
+  min-height: u(50px);
+  background: $grass;
+  padding: u(10px);
+  display: inline-block;
+  border-bottom: u(3px) solid white;
+  @include box-sizing;
+  @include bp(L){
+      margin: 0 auto;
+  }
+  nav{
+    ul li{
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: u(14px);
+      padding: u(10px);
+      a{
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+      }
+    }
   }
 }
 
@@ -12,15 +38,20 @@
   width: u(480px);
   height: u(300px);
   display: inline-block;
-  box-sizing: border-box;
   padding: u(10px);
+  margin-top: u(30px);
+  @include box-sizing;
 
   &.l-game{
-    background: url("../images/rps-game.png") no-repeat;
+    @include bp(M){
+      background: url("../images/rps-game.png") no-repeat;
+    }
   }
 
   &.l-intro{
-    background: url("../images/intro.png") no-repeat;
+    @include bp(M){
+      background: url("../images/intro.png") no-repeat;
+    }
     vertical-align: middle;
     text-align: center;
     padding-top: 20%;
@@ -45,9 +76,11 @@
 
 .l-results-container{
   text-align: center;
-  margin-top: 35%;
-  background: white;
-  padding: u(10px);  
+  margin-top: 32%;
+  bottom: 0;
+  background: $secondary-container;
+  padding: u(10px);
+  border: u(1px) solid white;
   p{
     font-size: u(16px);
   }

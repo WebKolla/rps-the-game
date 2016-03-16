@@ -1,31 +1,32 @@
-.std-btn{
-  border-radius: u(24px);
-  font-size: u(16px);
+.button, %button {
   font-family: 'Roboto', Arial;
   text-align: center;
   padding: u(10px 20px);
   border: 0;
   outline: 0;
   cursor: pointer;
-
+  @include border-radius(24px);
   &:hover{
     opacity: .9;
     transition: all 100ms ease;
   }
+}
+
+.std-btn {
+  @extend %button;
   &.blue{
+    font-size: u(20px);
+    margin: u(5px);
+    border: u(1px) solid white;
     background-color: $ocean;
     color: $snow;
+    &.--with-margin{
+      margin-top: u(10px);
+    }
   }
-}
-
-.btn-rock{
-  
-}
-
-.btn-paper{
-
-}
-
-.btn-scissors{
-
+  &.salmon{
+    font-size: u(14px);
+    background-color: $dark;
+    color: $snow;
+  }
 }

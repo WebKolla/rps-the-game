@@ -1,4 +1,3 @@
-
 function generateResults(id, isComputer){
     var player = "You";
     if(isComputer){

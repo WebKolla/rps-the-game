@@ -71,3 +71,15 @@ $breakpoints: S $l-breakpoint-S, M $l-breakpoint-M, L $l-breakpoint-L;
   }
   @return $list;
 }
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-sizing(){
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
