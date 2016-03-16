@@ -7,7 +7,7 @@ function generateResults(id, isComputer){
     msgContainer.innerHTML = "";
 
       if (uInput === "Rock" || uInput === "Paper" || uInput === "Scissors") {
-            autoChoice = getautoChoice();
+            autoChoice = getAutoChoice();
             resultContainer.innerHTML = "Computer chose " + autoChoice + " ";
 
             if (uInput === autoChoice) {
@@ -15,38 +15,34 @@ function generateResults(id, isComputer){
             }
 
             if (uInput === "Rock" && autoChoice === "Paper") {
-                msgContainer.innerHTML = "Paper covers Rock. "+ player +" Loose!";
+                msgContainer.innerHTML = "Paper can cover Rock. "+ player +" Loose!";
                 computerScore++;
                 computerScoreUpdate.innerHTML = computerScore;
             } else if (uInput === "Rock" && autoChoice === "Scissors") {
-                msgContainer.innerHTML = "Rock breaks scissors. "+ player +" Win!";
+                msgContainer.innerHTML = "Rock can break scissors. "+ player +" Win!";
                 userScore++;
                 userScoreUpdate.innerHTML = userScore;
-            }
-
-            if (uInput === "Paper" && autoChoice === "Rock") {
-                msgContainer.innerHTML = "Paper covers Rock. "+ player +" Win!";
+            } else if (uInput === "Paper" && autoChoice === "Rock") {
+                msgContainer.innerHTML = "Paper can cover Rock. "+ player +" Win!";
                 userScore++;
                 userScoreUpdate.innerHTML = userScore;
             } else if (uInput === "Paper" && autoChoice === "Scissors") {
-                msgContainer.innerHTML = "Scissors cuts Paper. "+ player +" Loose!";
+                msgContainer.innerHTML = "Scissors can cut Paper. "+ player +" Loose!";
                 computerScore++;
                 computerScoreUpdate.innerHTML = computerScore;
-            }
-
-            if (uInput === "Scissors" && autoChoice === "Rock") {
-                msgContainer.innerHTML = "Rock crushes Scissors. "+ player +" Loose!";
+            } else if (uInput === "Scissors" && autoChoice === "Rock") {
+                msgContainer.innerHTML = "Rock can crush Scissors. "+ player +" Loose!";
                 computerScore++;
                 computerScoreUpdate.innerHTML = computerScore;
             } else if (uInput === "Scissors" && autoChoice === "Paper") {
-                msgContainer.innerHTML = "Scissors cut Paper. "+player+" Win!";
+                msgContainer.innerHTML = "Scissors can cut Paper. "+ player +" Win!";
                 userScore++;
                 userScoreUpdate.innerHTML = userScore;
             }
       }
 }
 
-function getautoChoice(){
+function getAutoChoice(){
   var randomize = Math.random() * 100;
   var suggestion;
   if (randomize > 0 && randomize < 33) {
