@@ -1,8 +1,15 @@
 var isComputer = getQueryStringValue("isComp");
 var resultContainer = document.getElementById("resultContainer");
 var msgContainer = document.getElementById("msgContainer");
+var computerScoreUpdate = document.getElementById("computerScore");
+var userScoreUpdate = document.getElementById("userScore");
 var choices = ["Rock", "Paper", "Scissors"];
 var autoChoice;
+var userScore = 0;
+var computerScore = 0;
+
+computerScoreUpdate.innerHTML = "0";
+userScoreUpdate.innerHTML = "0";
 
 if(isComputer){
   btnVisibility();

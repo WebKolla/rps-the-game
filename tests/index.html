@@ -8,8 +8,44 @@
 </head>
 <body>
   <div id="qunit"></div>
-  <div id="qunit-fixture"></div>
+  <div id="qunit-fixture">
+    <div id="container" class="l-main-container l-game">
+      <div id="btnContainer" class="l-btn-container js-visibility-toggle">
+        <p class="c-bigger-text c-center">
+          Pick your choice and try your luck!
+        </p>
+        <div class="l-top-container">
+          <div class="l-score-boxes l-fl">
+            <p>Computer</p>
+            <p id="computerScore"></p>
+          </div>
+          <div class="l-score-boxes l-fr">
+            <p>Player</p>
+            <p id="userScore"></p>
+          </div>
+        </div>
+        <div class="l-game-buttons clearfix">
+          <button id="Rock"  class="std-btn blue">
+            Rock
+          </button>
+          <button id="Paper" class="std-btn blue">
+            Paper
+          </button>
+          <button id="Scissors" class="std-btn blue">
+            Scissors
+          </button>
+        </div>
+      </div>
+      <div class="l-full-width-container --result">
+          <p id="resultContainer"></p>
+          <p id="msgContainer"></p>
+      </div>
+    </div>
+  </div>
   <script src="//code.jquery.com/qunit/qunit-1.22.0.js"></script>
+  <script src="../src/js/Helpers.js"></script>
+  <script src="../src/js/Executor.js"></script>
+  <script src="../src/js/GameEngine.js"></script>
   <script src="js/test.js"></script>
 </body>
 </html>

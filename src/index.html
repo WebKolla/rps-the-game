@@ -20,16 +20,13 @@
               Bored.. Try your luck on Rock, Paper or Scissors.. It is a lot more fun than you think!
             </p>
             <div class="l-intro-btn-container">
-              <button id="plyvComp" class="std-btn blue --with-margin">Play vs Computer </button>
-              <button id="compvComp" class="std-btn blue --with-margin">Watch how pros do it!</button>
+              <a href="game.html" alt="Player vs Computer" title="Auto play"><button id="plyvComp" class="std-btn blue --with-margin">Player vs Computer</button></a>
+              <a href="game.html?isComp=true" alt="Auto Play" title="Auto play"><button id="compvComp" class="std-btn blue --with-margin">Auto play</button></a>
             </div>
         </div>
     </div>
 </body>
 <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script src="js/GameEngine.js"></script>
-<script src="js/Actions.js"></script>
-
 <script>
     var path = "http://browser-update.org/update-browser.html",
             target = "_blank",
